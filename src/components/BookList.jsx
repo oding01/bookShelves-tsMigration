@@ -1,8 +1,9 @@
 import { BookContext } from '@/context/BookContext'
 import { SearchContext } from '@/context/SearhContext'
 import { memo, useContext } from 'react'
+import { Link } from 'react-router-dom'
 
-const BookList = memo(function BookList() {
+const BookList = () => {
   console.log('[BookList] -rerender')
   const { filteredBooks } = useContext(SearchContext)
   const { setCurrentBook } = useContext(BookContext)
@@ -16,9 +17,11 @@ const BookList = memo(function BookList() {
     <>
       {filteredBooks.map((book) => (
         <div key={book.id}>
-          <span>
-            {book.title} - {book.author}
-          </span>
+          <Link to={`/details/${book.id}`}>
+            <span>
+              {book.title} - {book.author}
+            </span>
+          </Link>
           <button
             style={{ padding: '0.2rem 0.4rem', marginLeft: 4 }}
             onClick={() => savedCurrentBook(book)}
@@ -29,6 +32,6 @@ const BookList = memo(function BookList() {
       ))}
     </>
   )
-})
+}
 
-export default BookList
+export default memo(BookList)

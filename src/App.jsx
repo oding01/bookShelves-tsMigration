@@ -1,19 +1,9 @@
 import '@/App.css'
-import Container from '@/components/Container'
-import { BookProvider } from '@/context/BookContext'
-import { SearchProvider } from '@/context/SearhContext'
+import router from '@/shared/Router'
+import { RouterProvider } from 'react-router-dom'
 
 function App() {
-  return (
-    <>
-      <BookProvider>
-        <SearchProvider>
-          <Container type='bookshelves'></Container>
-          <Container type='creator'></Container>
-        </SearchProvider>
-      </BookProvider>
-    </>
-  )
+  return <RouterProvider router={router} />
 }
 
 export default App

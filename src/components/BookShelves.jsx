@@ -4,7 +4,7 @@ import { BookContext } from '@/context/BookContext'
 import books from '@/mock/book'
 import { useContext, useEffect } from 'react'
 
-function BookShelves() {
+const BookShelves = () => {
   console.log('[BookShelves] - rerender')
   const { currentBook, setCurrentBook } = useContext(BookContext)
 

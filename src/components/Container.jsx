@@ -1,7 +1,7 @@
 import BookShelves from '@/components/BookShelves'
 import Creator from '@/components/Creator'
 
-function Container({ type }) {
+const Container = ({ type }) => {
   return (
     <div>
       {type === 'bookshelves' && <BookShelves />}

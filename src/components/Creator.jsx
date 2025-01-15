@@ -1,6 +1,6 @@
 import { memo } from 'react'
 
-const Creator = memo(function Creator() {
+const Creator = () => {
   console.log('[Creator] - rerender')
   return (
     <>
@@ -9,6 +9,6 @@ const Creator = memo(function Creator() {
       <p>slimin92@naver.com</p>
     </>
   )
-})
+}
 
-export default Creator
+export default memo(Creator)
