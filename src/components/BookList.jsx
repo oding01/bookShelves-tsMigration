@@ -1,17 +1,12 @@
-import { BookContext } from '@/context/BookContext'
-import { SearchContext } from '@/context/SearhContext'
-import { memo, useContext } from 'react'
+import { useCurrentBook } from '@/hooks/useCurrentBook'
+import { useSearch } from '@/hooks/useSearchBook'
 import { Link } from 'react-router-dom'
 
 const BookList = () => {
   console.log('[BookList] -rerender')
-  const { filteredBooks } = useContext(SearchContext)
-  const { setCurrentBook } = useContext(BookContext)
 
-  function savedCurrentBook(book) {
-    setCurrentBook(book)
-    localStorage.setItem('currentBook', book.title)
-  }
+  const { savedCurrentBook } = useCurrentBook()
+  const { filteredBooks } = useSearch()
 
   return (
     <>
@@ -24,7 +19,7 @@ const BookList = () => {
           </Link>
           <button
             style={{ padding: '0.2rem 0.4rem', marginLeft: 4 }}
-            onClick={() => savedCurrentBook(book)}
+            onClick={() => savedCurrentBook({ title: book.title })}
           >
             읽기
           </button>
@@ -34,4 +29,4 @@ const BookList = () => {
   )
 }
 
-export default memo(BookList)
+export default BookList

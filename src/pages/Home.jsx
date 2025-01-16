@@ -4,12 +4,14 @@ import { SearchProvider } from '@/context/SearhContext'
 
 const Home = () => {
   return (
-    <BookProvider>
-      <SearchProvider>
-        <Container type='bookshelves'></Container>
-        <Container type='creator'></Container>
-      </SearchProvider>
-    </BookProvider>
+    <>
+      <BookProvider>
+        <SearchProvider>
+          <Container type='bookshelves'></Container>
+        </SearchProvider>
+      </BookProvider>
+      <Container type='creator'></Container>
+    </>
   )
 }
 

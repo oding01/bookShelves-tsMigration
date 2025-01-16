@@ -1,14 +1,18 @@
 import { SearchContext } from '@/context/SearhContext'
-import { memo, useContext } from 'react'
 
 const SearchInput = () => {
-  const { setSearchBook } = useContext(SearchContext)
+  console.log('[SearchInput] -rerender')
 
   return (
     <>
-      <input placeholder='검색' onChange={(e) => setSearchBook(e.target.value)} />
+      {/* SearchInput 컴포넌트의 리렌더링 방지 Consumer*/}
+      <SearchContext.Consumer>
+        {(context) => (
+          <input placeholder='검색' onChange={(e) => context.searching(e.target.value)} />
+        )}
+      </SearchContext.Consumer>
     </>
   )
 }
 
-export default memo(SearchInput)
+export default SearchInput
