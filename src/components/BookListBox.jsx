@@ -1,8 +1,8 @@
-import BookItem from '@/components/BookItem'
 import BookList from '@/components/BookList'
 import SearchInput from '@/components/SearchInput'
 import { BookContext } from '@/context/BookContext'
-const BookShelves = () => {
+import BookListItem from '@/components/BookListItem'
+const BookListBox = () => {
   console.log('[BookShelves] - rerender')
 
   return (
@@ -13,13 +13,14 @@ const BookShelves = () => {
       </BookContext.Consumer>
       <SearchInput />
       <BookList>
-        <BookItem />
+        <BookListItem />
       </BookList>
       {/* 만약 메모제이션으로 사용한다면
-      <BookList />
+      <BookList2 />
       */}
+      {/* <BookList2 /> */}
     </>
   )
 }
 
-export default BookShelves
+export default BookListBox

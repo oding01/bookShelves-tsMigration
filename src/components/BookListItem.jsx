@@ -3,7 +3,7 @@ import { useSearch } from '@/hooks/useSearchBook'
 import { memo } from 'react'
 import { Link } from 'react-router-dom'
 
-const BookItem = () => {
+const BookListItem = () => {
   console.log('[BookItem] -rerender')
   const { savedCurrentBook } = useCurrentBook()
   const { filteredBooks } = useSearch()
@@ -29,4 +29,4 @@ const BookItem = () => {
   )
 }
 
-export default memo(BookItem)
+export default memo(BookListItem)

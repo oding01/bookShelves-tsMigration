@@ -7,7 +7,7 @@ const Home = () => {
     <>
       <BookProvider>
         <SearchProvider>
-          <Container type='bookshelves'></Container>
+          <Container type='bookListBox'></Container>
         </SearchProvider>
       </BookProvider>
       <Container type='creator'></Container>
