@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react'
+import { createContext, useContext, useState } from 'react'
 import books from '@/mock/book'
 
 export const SearchContext = createContext({
@@ -25,3 +25,20 @@ export const SearchProvider = ({ children }) => {
     </SearchContext.Provider>
   )
 }
+
+// 커스텀 훅
+export const useSearch = () => {
+  const context = useContext(SearchContext)
+  
+  if (!context) {
+    throw new Error('useSearch must be used within SearchProvider')
+  }
+ 
+  const { searchBook, searching, filteredBooks } = context
+ 
+  return {
+    searchBook,
+    searching, 
+    filteredBooks
+  }
+ }

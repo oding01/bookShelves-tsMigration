@@ -9,7 +9,7 @@ const BookListBox = () => {
     <>
       <h3>나만의 책장</h3>
       <BookContext.Consumer>
-        {(saved) => <div>현재 읽고 있는 책 : {saved.currentBook?.title || '없음'}</div>}
+        {(storage) => <div>현재 읽고 있는 책 : {storage.currentBook?.title || '없음'}</div>}
       </BookContext.Consumer>
       <SearchInput />
       <BookList>

@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import { Link } from 'react-router-dom'
 
-const BookItem2 = ({ book, savedCurrentBook }) => {
+const BookItem2 = ({ book, saveBook }) => {
   console.log('[BookItem] -rerender')
   return (
     <div>
@@ -12,7 +12,7 @@ const BookItem2 = ({ book, savedCurrentBook }) => {
       </Link>
       <button
         style={{ padding: '0.2rem 0.4rem', marginLeft: 4 }}
-        onClick={() => savedCurrentBook({ title: book.title })}
+        onClick={() => saveBook({ title: book.title })}
       >
         읽기
       </button>

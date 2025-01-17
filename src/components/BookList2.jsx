@@ -1,19 +1,20 @@
-import BookItem2 from '@/components/BookItem2'
-import { useCurrentBook } from '@/hooks/useCurrentBook'
-import { useSearch } from '@/hooks/useSearchBook'
+import BookItem2 from '@/components/BookListItem2'
+import { useBook } from '@/context/BookContext'
+import { useSearch } from '@/context/SearhContext'
+
 import { useCallback } from 'react'
 
 const BookList2 = () => {
   console.log('[BookList] -rerender')
   const { filteredBooks } = useSearch()
-  const { savedCurrentBook } = useCurrentBook()
+  const { saveBook } = useBook()
 
-  const handleSave = useCallback(savedCurrentBook, [])
+  const handleSave = useCallback(saveBook, [])
 
   return (
     <>
       {filteredBooks.map((book) => (
-        <BookItem2 key={book.id} book={book} savedCurrentBook={handleSave} />
+        <BookItem2 key={book.id} book={book} saveBook={handleSave} />
       ))}
     </>
   )
