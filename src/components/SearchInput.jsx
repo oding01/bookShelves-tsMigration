@@ -8,7 +8,7 @@ const SearchInput = () => {
       {/* SearchInput 컴포넌트의 리렌더링 방지 Consumer*/}
       <SearchContext.Consumer>
         {(context) => (
-          <input placeholder='검색' onChange={(e) => context.searching(e.target.value)} />
+          <input placeholder='검색' onChange={(e) => context.searchByTerm(e.target.value)} />
         )}
       </SearchContext.Consumer>
     </>

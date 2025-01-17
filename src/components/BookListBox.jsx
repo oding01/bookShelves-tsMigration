@@ -18,7 +18,6 @@ const BookListBox = () => {
       {/* 만약 메모제이션으로 사용한다면
       <BookList2 />
       */}
-      {/* <BookList2 /> */}
     </>
   )
 }
