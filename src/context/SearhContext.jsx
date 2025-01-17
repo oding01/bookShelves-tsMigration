@@ -15,7 +15,6 @@ export const SearchProvider = ({ children }) => {
   }
 
   // 검색 시 BookList 컴포넌트만 리렌더링 되게 하기 위함. (실시간 검색)
-
   const filteredBooks = searchBook
     ? books.filter((book) => book.title.toLowerCase().includes(searchBook.toLowerCase()))
     : books
