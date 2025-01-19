@@ -1,11 +1,9 @@
-import BookListBox from '@/components/BookListBox'
-import Creator from '@/components/Creator'
-
-const Container = ({ type }) => {
+// 레이아웃을 Container로 써라.
+const Container = ({title, children }) => {
   return (
     <div>
-      {type === 'bookListBox' && <BookListBox />}
-      {type === 'creator' && <Creator />}
+      <h3>{title}</h3>
+      {children}
     </div>
   )
 }

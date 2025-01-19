@@ -9,15 +9,12 @@ const BookListBox = () => {
     <>
       <h3>나만의 책장</h3>
       <BookContext.Consumer>
-        {(storage) => <div>현재 읽고 있는 책 : {storage.currentBook?.title || '없음'}</div>}
+        {(context) => <div>현재 읽고 있는 책 : {context.currentBook?.title || '없음'}</div>}
       </BookContext.Consumer>
       <SearchInput />
       <BookList>
         <BookListItem />
       </BookList>
-      {/* 만약 메모제이션으로 사용한다면
-      <BookList2 />
-      */}
     </>
   )
 }

@@ -1,4 +1,6 @@
+import BookListBox from '@/components/BookListBox'
 import Container from '@/components/Container'
+import Creator from '@/components/Creator'
 import { BookProvider } from '@/context/BookContext'
 import { SearchProvider } from '@/context/SearhContext'
 
@@ -7,10 +9,14 @@ const Home = () => {
     <>
       <BookProvider>
         <SearchProvider>
-          <Container type='bookListBox'></Container>
+          <Container title='나만의 책장'>
+            <BookListBox />
+          </Container>
         </SearchProvider>
       </BookProvider>
-      <Container type='creator'></Container>
+      <Container title='만든 이'>
+        <Creator />
+      </Container>
     </>
   )
 }

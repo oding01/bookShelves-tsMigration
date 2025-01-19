@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 const BookListItem = () => {
   console.log('[BookItem] -rerender')
-  const { saveBook } = useBook()
+  const { saveCurrentBook } = useBook()
   const { filteredBooks } = useSearch()
 
   return (
@@ -19,7 +19,7 @@ const BookListItem = () => {
           </Link>
           <button
             style={{ padding: '0.2rem 0.4rem', marginLeft: 4 }}
-            onClick={() => saveBook({ title: book.title })}
+            onClick={() => saveCurrentBook(book)}
           >
             읽기
           </button>

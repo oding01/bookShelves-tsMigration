@@ -29,16 +29,16 @@ export const SearchProvider = ({ children }) => {
 // 커스텀 훅
 export const useSearch = () => {
   const context = useContext(SearchContext)
-  
+
   if (!context) {
     throw new Error('useSearch must be used within SearchProvider')
   }
- 
+
   const { searchTerm, searchByTerm, filteredBooks } = context
- 
+
   return {
     searchTerm,
-    searchByTerm, 
-    filteredBooks
+    searchByTerm,
+    filteredBooks,
   }
- }
+}
