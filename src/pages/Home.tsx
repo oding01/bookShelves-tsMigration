@@ -2,7 +2,8 @@ import BookListBox from '@/components/BookListBox'
 import Container from '@/components/Container'
 import Creator from '@/components/Creator'
 import { BookProvider } from '@/context/BookContext'
-import { SearchProvider } from '@/context/SearhContext'
+import { SearchProvider } from '@/context/SearchContext'
+
 
 const Home = () => {
   return (

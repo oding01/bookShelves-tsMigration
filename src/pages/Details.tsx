@@ -1,10 +1,11 @@
+import { Book } from '@/context/BookContext'
 import books from '@/mock/book'
 import { useParams } from 'react-router-dom'
 
 const Details = () => {
   const { id } = useParams()
 
-  const book = books.find((b) => b.id === Number(id))
+  const book: Book = books.find((b) => b.id === Number(id))
 
   return (
     <>

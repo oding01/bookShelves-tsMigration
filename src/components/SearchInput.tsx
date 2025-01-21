@@ -1,4 +1,4 @@
-import { SearchContext } from '@/context/SearhContext'
+import { SearchContext } from '@/context/SearchContext'
 
 const SearchInput = () => {
   console.log('[SearchInput] -rerender')
